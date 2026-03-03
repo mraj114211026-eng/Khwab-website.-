@@ -522,5 +522,17 @@ document.getElementById("searchInput").addEventListener("keyup", function() {
     });
 });
   </script>
+  <script>
+let colors = ["#0a0a12", "#1a1a40", "#16213e", "#0f3460", "#1b1b2f"];
+let i = 0;
+
+setInterval(function() {
+    document.body.style.backgroundColor = colors[i];
+    i++;
+    if (i >= colors.length) {
+        i = 0;
+    }
+}, 2000); // 2000 = 2 seconds
+  </script>
 </body>
 </html>
