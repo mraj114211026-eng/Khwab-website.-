@@ -14,6 +14,10 @@
   body{font-family:"Cormorant Garamond",serif;background:var(--white);color:var(--ink);overflow-x:hidden;}
 
   /* NAV */
+nav{ ... }
+.nav-scroll{ ... }
+.nav-logo{ ... }
+.nav-links{ ... }
   nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;transition:background 0.3s;}
   nav.scrolled{background:rgba(30,5,60,0.95);backdrop-filter:blur(12px);}
   .nav-logo{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:900;color:var(--gold);text-decoration:none;}
@@ -217,6 +221,7 @@ const IMG_QR_INSTA = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAg
     <li><a href="#awards">Awards</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <input type="text" id="searchInput" placeholder="Search..." style="padding:6px;border-radius:6px;border:1px solid #ccc;">
 </nav>
 
 <!-- HERO -->
@@ -502,5 +507,15 @@ document.querySelectorAll(".motion-card,.award-card,.round-item,.rule-item,.lead
   obs.observe(el);
 });
 </script>
+  <script>
+document.getElementById("searchInput").addEventListener("keyup", function() {
+    let value = this.value.toLowerCase();
+    let content = document.body.innerText.toLowerCase();
+    
+    if (!content.includes(value)) {
+        console.log("Not Found");
+    }
+});
+  </script>
 </body>
 </html>
