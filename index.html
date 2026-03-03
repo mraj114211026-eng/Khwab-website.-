@@ -509,12 +509,17 @@ document.querySelectorAll(".motion-card,.award-card,.round-item,.rule-item,.lead
 </script>
   <script>
 document.getElementById("searchInput").addEventListener("keyup", function() {
-    let value = this.value.toLowerCase();
-    let content = document.body.innerText.toLowerCase();
-    
-    if (!content.includes(value)) {
-        console.log("Not Found");
-    }
+    let filter = this.value.toLowerCase();
+    let sections = document.querySelectorAll("section, div");
+
+    sections.forEach(function(section) {
+        let text = section.innerText.toLowerCase();
+        if (text.includes(filter)) {
+            section.style.display = "";
+        } else {
+            section.style.display = "none";
+        }
+    });
 });
   </script>
 </body>
