@@ -12,6 +12,17 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
   body{font-family:"Cormorant Garamond",serif;background:var(--white);color:var(--ink);overflow-x:hidden;}
+  body{
+  background: linear-gradient(-45deg, #6c2bd9, #3b82f6, #9333ea, #06b6d4);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
   /* NAV */
 nav{ ... }
